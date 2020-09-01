@@ -1,4 +1,4 @@
-# Chapter04-10
+# Chapter04-01
 # 시퀀스 형
 # 컨테이너(Container : 서로다른 자료형[list, tuple, set, dictionary, collections.deque])
 # ex) a = [3, 3.0, 'A']
@@ -72,12 +72,12 @@ print(marks1)
 print(marks2)
 print()
 # 수정
-marks1[0][1] = 'X' # 
+marks1[0][1] = 'X' # 새로운 주소에 할당 되어 여러번 반복된 값들의 주소는 중복이 발생하지 않는다.
 marks2[0][1] = 'X' # 의도하지 않은 값의 변경이 발생한다 하나의 주소값이 여러번 복사되어 전체 데이터에 영향을 준다
 
 print(marks1)
 print(marks2)
 
 # 확인
-print([id(i) for i in marks1])
-print([id(i) for i in marks2])
+print([id(i) for i in marks1]) # result : [22038608, 22038568, 22038528, 22038488]
+print([id(i) for i in marks2]) # result : [22038448, 22038448, 22038448, 22038448]
