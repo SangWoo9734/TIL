@@ -1,13 +1,14 @@
 # Chapter03-01
 # Special Method(Magic Method)
 # 파이썬의 핵심 -> 시퀀스(Sequence), 반복(Iterator), 함수(Function), 클래스(Class)
-# 클래스 안에 정의할 수 있는 특별한(Built in) 메소드
+# 클래스 안에 정의할 수 있는 특별한(Built in, 이미 만들어 놓은) 메소드
 
+# 파이썬 데이터 모델
 
 # 기본형
 print(int(10))
-print(int)
-print(float)
+print(int) # result : <class 'int'>
+print(float) # result : <class 'float'>
 
 # 모든 속성 및 메소드 출력
 print(dir(int))
@@ -15,10 +16,10 @@ print(dir(float))
 
 n = 10
 
-print(n + 100)
+print(n + 100) # 내부적으로 .__add__  가 실행된 것이다.
 print(n.__add__(100)) # 사실상 이렇게 동작 한다.
-#print(n.__doc__)
-print(n.__bool__(), bool(n))
+#print(n.__doc__) # int class에 대한 코멘트가 출력
+print(n.__bool__(), bool(n)) # return : True
 print(n * 100, n.__mul__(100))
 
 print()
@@ -41,14 +42,14 @@ class Fruit:
         print("called __sub__")
         return self._price - x._price
 
-    def __le__(self, x):
+    def __le__(self, x): # 작거나 같다
         print("called __le__")
         if self._price <= x._price:
             return True
         else :
             return False
 
-    def __ge__(self, x):
+    def __ge__(self, x): # 크거나 같다
         print("called __ge__")
         if self._price >= x._price:
             return True

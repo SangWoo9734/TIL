@@ -40,21 +40,21 @@ print(id(car1))
 print(id(car2))
 print(id(car3))
 
-print(car1._company == car2._company)
-print(car1 is car2)
+print(car1._company == car2._company) # 값을 비교, result : False
+print(car1 is car2) # 인스턴스 자체를 비교, result : True
 
 # dir & __dict__ 확인
-print(dir(car1))
+print(dir(car1)) # Class 객체에 포함되어있는 메소드들을 리스트 형태로 표현
 print(dir(car2))
 
 print()
 print()
 
-print(car1.__dict__)
+print(car1.__dict__) # 인스턴스 안에 있는 값들을 딕셔너리 형태로 출력해줌
 print(car2.__dict__)
 
 #Doctring
-print(Car.__doc__)
+print(Car.__doc__) # 클래스 내 작성한 클래스에 대한 설명을 확인할 수 있음
 print()
 
 # 실행
@@ -62,12 +62,12 @@ car1.detail_info() #메소드 내 print 가 있으니까 쓸필요 없음
 car2.detail_info()
 
 #비교
-print(car1.__class__, car2.__class__)
-print(id(car1.__class__), id(car2.__class__))
+print(car1.__class__, car2.__class__) # .__class__ : 각 개체들의 클래스에 대한 정보를 출력
+print(id(car1.__class__), id(car2.__class__)) # 각 개체들의 클래스에 대한  주소값(id)를 출력
 print()
 
 #에러
-# Car.detail_info(car2)
+# Car.detail_info(car2) : 클래스에 직접적으로 메소드를 적용할 수 없음 
 car2.detail_info()
 Car.detail_info(car2)
 print()

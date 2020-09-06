@@ -6,7 +6,7 @@
 # 일반적인 코딩
 # 차량 1
 car_company_1 = 'car1'
-car_detail = [
+car_detail_1 = [
     {'color' : 'white'},
     {'horsepower' : 400},
     {'price' : 8000}
@@ -14,7 +14,7 @@ car_detail = [
 
 #차량 2
 car_company_2 = 'car2'
-car_detail = [
+car_detail_2 = [
     {'color' : 'black'},
     {'horsepower' : 270},
     {'price' : 5000}
@@ -22,7 +22,7 @@ car_detail = [
 
 # 차량 3
 car_company_3 = 'car4'
-car_detail = [
+car_detail_3 = [
     {'color' : 'silver'},
     {'horsepower' : 300},
     {'price' : 6000}
@@ -31,7 +31,8 @@ car_detail = [
 # 자료가 많아질 수록 데이터의 양도 그에 따라 엄청나게 증가
 
 # 리스트 구조
-# 관리하기가 불편, 인덱스로 접근시 실수 발생 가능성이 높음, 삭제 불편 (인덱스를 반드시 알아야 접근가능)
+# 관리하기가 불편
+# 인덱스로 접근시 실수 발생 가능성이 높음, 삭제 불편 (인덱스를 반드시 알아야 접근가능)
 car_company_list = ['car1', 'car2', 'car3']
 car_detail_list = [
     {'color' : 'white','horsepower' : 400, 'price' : 8000},
@@ -70,13 +71,13 @@ class Car():
         self._company = company
         self._details = details
 
-    def __str__(self):
+    def __str__(self): # 비공식적인, 사용자 입장에서의 출력을 원할 떄 사용
         return 'str : {} - {}'.format(self._company, self._details)
 
-    def __repr__(self):
+    def __repr__(self): # 객체, 자료형의 타입에 따른 객체를 그대료 출력할 경우에 사용
         return 'repr : {} - {}'.format(self._company, self._details)
 
-car1 = Car('car1', {'color' : 'white','horsepower' : 400, 'price' : 8000})
+car1 = Car('car1', {'color' : 'white','horsepower' : 400, 'price' : 8000}) # 기본적으로 __str__ 을 출력, 없으면 __repr__ 출력
 car2 = Car('car2', {'color' : 'black', 'horsepower' : 270, 'price' : 5000})
 car3 = Car('car3', {'color' : 'silver', 'horsepower' : 300, 'price' : 6000})
 
@@ -84,7 +85,7 @@ print(car1)
 print(car2)
 print(car3)
 
-print(car1.__dict__)
+print(car1.__dict__) # 객체의 attribute 값들을 출력해준다
 print(car2.__dict__)
 print(car3.__dict__)
 

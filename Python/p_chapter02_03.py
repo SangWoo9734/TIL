@@ -35,11 +35,11 @@ class Car():
     def get_price(self):
         return 'Before Car Price -> company : {}, price : {}'.format(self._company, self._details.get('price'))
     
-    # Instance Method
+    # Instance Method -> self를 인자로 받아서 각 인스턴스가 가지고 있는 고유한 값을 사용
     def get_price_culc(self):
         return 'After Car Price -> company : {}, price : {}'.format(self._company, self._details.get('price')* Car.price_per_raise)
 
-    #Class Method
+    #Class Method -> 처음 인자를 cls를 받는다  인스턴스 -> self, 클래스 -> cls
     @classmethod
     def raise_price(cls, per):
         if per <= 1:
@@ -49,7 +49,7 @@ class Car():
         print("Succeed! Price increased.")
 
     #Static Method
-    @staticmethod #self, cls 처럼 전달받는 인자가 없음
+    @staticmethod #self, cls 처럼 전달받는 인자가 없음. 다른 메소드들과 받는 인자의 차이만 있고 크게 다른점이없음
     def is_car1(inst):
         if inst._company == "car1":
             return "OK! This car is {}".format(inst._company)
@@ -63,7 +63,7 @@ car1.detail_info()
 car2.detail_info()
 
 
-# 가격 정보
+# 가격 정보 (직접 접근) --> 편하긴 하지만 좋은 방법은 아니다.
 print(car1._details.get('price'))
 print(car2._details['price'])
 
@@ -72,14 +72,14 @@ print(car1.get_price())
 print(car2.get_price())
 
 # 가격 정보(인상 후)
-# 가격 인상(클래스 메소드 미사용)
+# 가격 인상(클래스 메소드 미사용)(직접 접근)
 Car.price_per_raise = 1.4
 print(car1.get_price_culc())
 print(car2.get_price_culc())
 print()
 
 # 클래스 메소드 실행
-Car.raise_price(1.6)
+Car.raise_price(1.6) # 클래스 메소드를 사용하여 비율 변경 -> 메소드를 사용하면서 메소드 내부에 좀더 복잡한 코드를 사용하여 값을 직접 변경하는 것과 같은 효과를 낼 수 있다.
 print(car1.get_price_culc())
 print(car2.get_price_culc())
 
