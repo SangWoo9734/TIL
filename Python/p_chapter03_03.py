@@ -16,6 +16,7 @@ l_leng1 = sqrt((pt1[0] - pt2[0]) ** 2 + (pt1[1] - pt2[1]) ** 2)
 
 print(l_leng1)
 
+# 네임드 튜플 ㅣ 클래스와는 다른 Collection 모듈의 일종, tuple 이면서 Dictionary 값을 가지고 있다.
 # 네임드 튜플 사용
 from collections import namedtuple
 

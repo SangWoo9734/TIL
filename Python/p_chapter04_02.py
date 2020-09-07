@@ -23,7 +23,7 @@ x, y, *rest = range(10) # 차례대로 x, y 값이 할당되고 나머지 값이
 print(x, y, rest)
 x, y, *rest = range(2)
 print(x, y, rest)
-x, y, *rest = 1, 2, 3, 4, 5
+x, y, *rest = 1, 2, 3, 4, 5 # 괄호없이 그냥 선언하면 Tuple
 print(x, y, rest)
 
 print()
@@ -31,8 +31,8 @@ print()
 
 # Mutable(가변) vs Immutable(불변)
 
-l = (15, 20, 25)
-m = [15, 20, 25]
+l = (15, 20, 25) # Tuple : 가변
+m = [15, 20, 25] # List : 불변
 
 print(l, id(l))
 print(m, id(m))
@@ -57,9 +57,9 @@ print()
 # sorted : 정렬 후 새로운 객체 반환, 원본 변경 X
 f_list = ['orange', 'apple', 'mango', 'coconut', 'lemon', 'strawberry', 'papaya']
 print('sorted - ', sorted(f_list))
-print('sorted - ', sorted(f_list, reverse=True)) # defult = False
-print('sorted - ', sorted(f_list, key=len))
-print('sorted - ', sorted(f_list, key=lambda x : x[-1])) # 익명함수를 사용하여 정렬기준 설정
+print('sorted - ', sorted(f_list, reverse=True)) # defult = False 역 정렬 출력
+print('sorted - ', sorted(f_list, key=len)) # 변수의 길이에 따라 정렬
+print('sorted - ', sorted(f_list, key=lambda x : x[-1])) # 익명함수를 사용하여 정렬기준 설정, 역 정렬 출력 
 print('sorted - ', sorted(f_list, key=lambda x : x[-1], reverse=True))
 
 

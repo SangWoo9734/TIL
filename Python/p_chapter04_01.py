@@ -2,7 +2,7 @@
 # 시퀀스 형
 # 컨테이너(Container : 서로다른 자료형[list, tuple, set, dictionary, collections.deque])
 # ex) a = [3, 3.0, 'A']
-# 플랫 (Flat : 한 개의 자료형[str, bytes, bytearray, array.array, memoryview])
+# 플랫 (Flat : 한 개의 자료형만 저장가능[str, bytes, bytearray, array.array, memoryview])
 # 가변( list, bytearray, array.array, memoryview, deque )
 # 불변( tuple, str, bytes )
 
@@ -53,7 +53,7 @@ import array
 tuple_g = (ord(s) for s in chars)
 array_g = array.array('I', (ord(s) for s in chars)) # --> 'I' == int
 print(type(tuple_g))
-print(next(tuple_g)) # --> next() 로 하나 씩 출력
+print(next(tuple_g)) # --> next() 로 하나 씩 출력, 첫번째를 출력하고 다음 값을 갖고 대기
 print(type(array_g))
 print(array_g)
 print(array_g.tolist()) # --> array 상태를 리스트로 바꾸어 준다.
