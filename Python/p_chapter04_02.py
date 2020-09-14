@@ -65,7 +65,7 @@ print('sorted - ', sorted(f_list, key=lambda x : x[-1], reverse=True))
 
 print(f_list)
 
-print()
+print() 
 # sort : 정렬 후 객체(원본)를 직접 변경
 
 # 반환 값 확인 (None)
